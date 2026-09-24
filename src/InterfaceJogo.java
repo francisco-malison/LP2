@@ -39,20 +39,21 @@ public class InterfaceJogo {
     private static void fazerAposta(Scanner sc, Apostas apostas){
         System.out.println("faça a aposta de 5 numeros entre 1 e 25, cada um separado por expaço");
         String entrada = sc.nextLine();
-        String [] bichosApostados = entrada.split(" ");
+        String [] Apostados = entrada.split(" ");
 
-        if(bichosApostados.length != 5){
+        if(Apostados.length != 5){
             System.out.println("quantidade de numeros apostados invalidos!");
         }else{
-            apostas.setAposta(bichosApostados);
+            apostas.setAposta(Apostados);
         }
     }
     private static void verAposta(Apostas apostas){
-        String [] bichosApostados = apostas.getAposta();
+        String bichosApostados = apostas.getAposta();
         System.out.println(bichosApostados);
 
     }
     private static void verBicho(Scanner sc, Apostas apostas){
+        System.out.println("Digite um numero");
         int numeroDoBicho = sc.nextInt();
         if(numeroDoBicho < 1 || numeroDoBicho > 25){
             System.out.println("Numero invalido");
