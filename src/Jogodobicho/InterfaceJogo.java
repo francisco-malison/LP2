@@ -7,13 +7,19 @@ public class InterfaceJogo {
         Apostas apostas = new Apostas();
 
         String menu = "1-Apostar;\n" +
-                "2-Ver Aposta;\n" +
-                "3-Olhar Bicho pelo numero;\n" +
-                "4-Sair";
+                "2-Apostar Aleatoriamente;\n" +
+                "3-Olhar a Aposta;\n" +
+                "4-Olhar Bicho;\n" +
+                "5-Ver Tabela;\n" +
+                "6-Ver Resultado;\n" +
+                "7-Sair";
         final int APOSTAR = 1;
-        final int VERAPOSTA = 2;
-        final int OLHARBICHO = 3;
-        final int SAIR = 4;
+        final int APOSTA_ALEATORIA = 2;
+        final int VERAPOSTA = 3;
+        final int OLHARBICHO = 4;
+        final int VERTABELA = 5;
+        final int VERRESULTADO = 6;
+        final int SAIR = 7;
 
         int op;
 
@@ -23,11 +29,20 @@ public class InterfaceJogo {
                 case APOSTAR:
                     fazerAposta(sc, apostas);
                     break;
+                case APOSTA_ALEATORIA:
+                    apostaAleatoria();
+                    break;
                 case VERAPOSTA:
                     verAposta(apostas);
                     break;
                 case OLHARBICHO:
                     verBicho(sc, apostas);
+                    break;
+                case VERTABELA:
+                    tabelaBosBicho();
+                    break;
+                case VERAPOSTA:
+                    resultadoDoBicho();
                     break;
                 case SAIR:
                     break;

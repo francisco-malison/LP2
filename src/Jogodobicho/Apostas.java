@@ -48,7 +48,17 @@ public class Apostas {
             System.out.println("quantidade de numeros apostados invalidos!");
         }
     }
-    public void fazerApostas(){}
+    public void fazerApostasAleatoria(){
+        Random random = new Random();
+        int[] numeros = new int[5];
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = random.nextInt(25) + 1;
+        }
+        Arrays.sort(numeros);
+        aposta = numeros;
+        apostaRealizada = true;
+    }
+
     public String getAposta(){
         String resposta ="";
         if(apostaRealizada){
@@ -68,9 +78,10 @@ public class Apostas {
         String bicho = tabelaDosBichos[numeroDoBicho-1];
         return bicho;
     }
-    public String [] verTabela(){
-        return tabelaDosBichos;
-    }
+    //public String [] verTabela(){
+    //    return tabelaDosBichos;
+    //}
+
     public String verResultado(){
         Random random = new Random();
         if (apostaRealizada){
