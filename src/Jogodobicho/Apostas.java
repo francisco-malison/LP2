@@ -78,9 +78,9 @@ public class Apostas {
         String bicho = tabelaDosBichos[numeroDoBicho-1];
         return bicho;
     }
-    //public String [] verTabela(){
-    //    return tabelaDosBichos;
-    //}
+    public String [] verTabela(){
+        return tabelaDosBichos;
+    }
 
     public String verResultado(){
         Random random = new Random();

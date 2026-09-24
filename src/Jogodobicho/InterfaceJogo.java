@@ -1,5 +1,6 @@
 package Jogodobicho;
 
+import java.util.Arrays;
 import java.util.Scanner;
 public class InterfaceJogo {
     public static void main(String[] args) {
@@ -30,7 +31,7 @@ public class InterfaceJogo {
                     fazerAposta(sc, apostas);
                     break;
                 case APOSTA_ALEATORIA:
-                    apostaAleatoria();
+                    apostaAleatoria(apostas);
                     break;
                 case VERAPOSTA:
                     verAposta(apostas);
@@ -39,10 +40,10 @@ public class InterfaceJogo {
                     verBicho(sc, apostas);
                     break;
                 case VERTABELA:
-                    tabelaBosBicho();
+                    tabelaBosBicho(apostas);
                     break;
-                case VERAPOSTA:
-                    resultadoDoBicho();
+                case VERRESULTADO:
+                    resultadoDoBicho(apostas);
                     break;
                 case SAIR:
                     break;
@@ -76,5 +77,17 @@ public class InterfaceJogo {
         int op = sc.nextInt();
         sc.nextLine();
         return op;
+    }
+
+    private static void apostaAleatoria(Apostas apostas){
+        apostas.fazerApostasAleatoria();
+    }
+
+    private static void tabelaBosBicho(Apostas apostas){
+        System.out.println(Arrays.toString(apostas.verTabela()));
+    }
+
+    private static void resultadoDoBicho(Apostas apostas){
+        System.out.println(apostas.verResultado());
     }
 }
